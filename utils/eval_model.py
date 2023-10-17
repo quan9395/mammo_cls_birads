@@ -3,6 +3,7 @@ from tqdm import tqdm
 import torch.nn as nn
 from sklearn.metrics import f1_score
 from torch.autograd import Variable
+import torch.nn.functional as F
 
 
 class FocalLoss(nn.Module):
