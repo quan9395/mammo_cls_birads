@@ -106,7 +106,8 @@ def train(model,
   
                 # print(pred_density.shape)
                 # print(label_density)
-                birads_loss = FocalLoss(gamma=4)(pred_birad, label_birads.long())
+                # birads_loss = FocalLoss(gamma=4)(pred_birad, label_birads.long())
+                birads_loss = criterion(pred_birad, label_birads.long())
                 # density_loss = FocalLoss(gamma=4)(pred_density, label_density.long())
                 total_loss = birads_loss
 
