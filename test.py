@@ -39,15 +39,14 @@ for key, value in checkpoint['model_state_dict'].items():
     new_key = key.replace("module.", "")
     new_state_dict[new_key] = value
 model.load_state_dict(new_state_dict)
-# model.load_state_dict(checkpoint['model_state_dict'])
 if __name__ == '__main__':
     print("Model loaded!")
     model = model.to(device)
 
-    all_preds_density = []
+    # all_preds_density = []
     all_preds_birads = []
     all_labels_birads = []
-    all_labels_density = []
+    # all_labels_density = []
     model.eval()
     with torch.no_grad():
         for _, data in enumerate(tqdm(testloader)):
